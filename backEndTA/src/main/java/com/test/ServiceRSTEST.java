@@ -23,13 +23,7 @@ public class ServiceRSTEST {
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Service> get(){
 		List<Service> listRslt = entityManager.createQuery("SELECT t FROM Service t", Service.class).getResultList();
-		System.out.println(listRslt);
 		return listRslt;
-		//List<Service> listResult = entityManager.createNamedQuery("service.findAll", Service.class).getResultList();
-		//System.out.println(listResult);
-		//return this.entityManager.createNamedQuery("service.findAll", Service.class).getResultList();
 	}
-
-
 	
 }

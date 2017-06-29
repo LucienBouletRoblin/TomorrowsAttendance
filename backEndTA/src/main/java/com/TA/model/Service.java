@@ -32,10 +32,10 @@ public class Service implements Serializable {
 		public Service() {}
 
 		public Service(Long service, Date date, Long customerCount) {
-			super();
-			this.service = service;
-			this.date = date;
-			this.customerCount = customerCount;
+
+			this.setService(service);
+			this.setDate(date);
+			this.setCustomerCount(customerCount);
 		}
 
 		public Long getId() {
@@ -50,8 +50,13 @@ public class Service implements Serializable {
 			return service;
 		}
 
-		public void setService(Long service) {
-			this.service = service;
+		public void setService(Long service) throws NullPointerException {
+			if (service == null){
+				throw new NullPointerException();
+			}
+			else {
+				this.service = service;
+			}
 		}
 
 
@@ -61,7 +66,12 @@ public class Service implements Serializable {
 
 
 		public void setDate(Date date) {
-			this.date = date;
+			if (date == null){
+				throw new NullPointerException();
+			}
+			else {
+				this.date = date;
+			}
 		}
 
 
@@ -70,7 +80,12 @@ public class Service implements Serializable {
 		}
 
 		public void setCustomerCount(Long customerCount) {
-			this.customerCount = customerCount;
+			if (customerCount == null){
+				throw new NullPointerException();
+			}
+			else {
+				this.customerCount = customerCount;
+			}
 		}
 
 }
