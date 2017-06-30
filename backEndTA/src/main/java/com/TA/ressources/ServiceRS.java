@@ -1,4 +1,4 @@
-package com.test;
+package com.TA.ressources;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ import com.TA.model.Service;
 
 @Stateless
 @Path("/allservices")
-public class ServiceRSTEST {
+public class ServiceRS {
 	
 	@PersistenceContext(unitName = "tomorrowsAttendance")
 	EntityManager entityManager;

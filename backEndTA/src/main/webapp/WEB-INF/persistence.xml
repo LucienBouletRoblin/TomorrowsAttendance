@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<persistence version="2.0"
-	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence 
-	              http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+  http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+	version="2.1">
 	<persistence-unit name="tomorrowsAttendance">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<jta-data-source>tomorrowsAttendance</jta-data-source>
 		<class>com.TA.model.Service</class>
 		<properties>
-			<property name="openjpa.jdbc.DBDictionary" value="mysql" />
-			<property name="openjpa.Log" value="SQL=Trace" />
+			<property name="hibernate.connection.url"
+				value="jdbc:mysql://localhost:3306/tomorrowsattendance" />
+			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+			<property name="hibernate.connection.username" value="User" />
+			<property name="hibernate.connection.password" value="User" />
+			<property name="hibernate.archive.autodetection" value="class" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hbm2ddl.auto" value="update" />
+			<property name="tomee.jpa.factory.lazy" value="true" />
 		</properties>
 	</persistence-unit>
 </persistence>
