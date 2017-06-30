@@ -1,7 +1,6 @@
 package com.TA.model;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -27,7 +26,6 @@ public class Service implements Serializable {
 		@Temporal(TemporalType.DATE)
 		private Date date;
 		private Long customerCount;
-
 
 		public Service() {}
 

@@ -5,6 +5,7 @@ import org.junit.Test;
 
 public class TestService {
 	
+	@SuppressWarnings("unused")
 	private Service service;
 	
 	//public Service(Long service, Date date, Long customerCount) 	
