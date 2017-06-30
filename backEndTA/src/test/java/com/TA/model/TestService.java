@@ -1,5 +1,6 @@
 package com.TA.model;
 
+import java.time.LocalDate;
 import java.util.Date;
 import org.junit.Test;
 
@@ -7,12 +8,12 @@ public class TestService {
 	
 	@SuppressWarnings("unused")
 	private Service service;
-	
+	private LocalDate date = LocalDate.now();
 	//public Service(Long service, Date date, Long customerCount) 	
 	
 	@Test(expected = NullPointerException.class)
 	public void test_NullService() {
-		service = new Service(null, new Date(), 1L);
+		service = new Service(null, date, 1L);
 	}
 	
 	@Test(expected = NullPointerException.class)
@@ -22,8 +23,14 @@ public class TestService {
 	
 	@Test(expected = NullPointerException.class)
 	public void test_NullCustomerCount() {
-		service = new Service(1L, new Date(), null);
+		service = new Service(1L, date, null);
 	}
+	
+//	@Test(expected = IllegalArgumentException.class)
+//	public void test_LocalDatetoDateinDB(){
+//		LocalDate localDate = LocalDate.now();
+//		
+//	}
 
 }
 
