@@ -5,15 +5,24 @@ import { HttpModule }    from '@angular/http';
 
 import { AppComponent }         from './app.component';
 import { DashboardComponent }   from './dashboard/dashboard.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {DropdownModule} from 'primeng/primeng';
+import {RadioButtonModule} from 'primeng/primeng';
+import {SpinnerModule} from 'primeng/primeng';
+import {CalendarModule} from 'primeng/primeng';
 
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    RadioButtonModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SpinnerModule,
+    CalendarModule
   ],
   declarations: [
     AppComponent,

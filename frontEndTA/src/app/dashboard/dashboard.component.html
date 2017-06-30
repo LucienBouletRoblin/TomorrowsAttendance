@@ -1,5 +1,27 @@
 <div class="container">
-    <div>
-       <p> dashboard</p>
-    </div>
+  <div>
+    <form (ngSubmit)="onSubmit()" #servForm="ngForm">
+      <div class="form-group">
+        <label for="count">Attendance</label>
+        <p-spinner id="count" [(ngModel)]="serviceEntry.attendance" name="attendance" required value="0" [min]="0"></p-spinner>
+
+        <label for="date">date</label>
+        <p-calendar [(ngModel)]="serviceEntry.date" name="date"></p-calendar>
+
+        <label for="servNum">Attendance</label>
+        <div id="servNum" class="ui-g">
+          <div class="ui-g-12">
+            <p-radioButton name="group2" value="1" label="midi" [(ngModel)]="serviceEntry.number"></p-radioButton>
+          </div>
+          <div class="ui-g-12">
+            <p-radioButton name="group2" value="2" label="soir" [(ngModel)]="serviceEntry.number"></p-radioButton>
+          </div>
+        </div>
+
+
+      </div>
+      <button type="submit" class="btn btn-success">Submit</button>
+      <button type="button" class="btn btn-default" (click)="servForm.reset()">Reset</button>
+    </form>
+  </div>
 </div>
