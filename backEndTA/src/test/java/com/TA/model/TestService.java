@@ -1,7 +1,7 @@
 package com.TA.model;
 
 import java.time.LocalDate;
-import java.util.Date;
+
 import org.junit.Test;
 
 public class TestService {
@@ -26,11 +26,5 @@ public class TestService {
 		service = new Service(1L, date, null);
 	}
 	
-//	@Test(expected = IllegalArgumentException.class)
-//	public void test_LocalDatetoDateinDB(){
-//		LocalDate localDate = LocalDate.now();
-//		
-//	}
-
 }
 
