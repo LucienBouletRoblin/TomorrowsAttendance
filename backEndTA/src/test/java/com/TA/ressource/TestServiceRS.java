@@ -1,13 +1,11 @@
 package com.TA.ressource;
 
-import static io.restassured.RestAssured.when;
 import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.when;
 import static org.hamcrest.Matchers.hasItems;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
-
-import com.google.common.net.MediaType;
 
 import io.restassured.RestAssured;
 

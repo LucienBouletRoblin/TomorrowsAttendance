@@ -14,12 +14,10 @@ public class ObjectMapperContextResolver implements ContextResolver<ObjectMapper
         MAPPER = new ObjectMapper();
         MAPPER.registerModule(new JSR310Module());
         MAPPER.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
-        System.out.println("contextresolver called");
     }
 
     @Override
     public ObjectMapper getContext(Class<?> type) {
-    	 System.out.println("contextresolver called");
         return MAPPER;
     }  
 }
