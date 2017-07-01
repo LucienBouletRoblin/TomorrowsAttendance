@@ -10,13 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.util.LocalDateDeserializer;
-import com.util.LocalDateSerializer;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
-
 @Entity
 @Table(name = "service")
 @NamedQuery(name = "service.findAll", query = "SELECT t FROM Service t")
@@ -28,9 +21,7 @@ public class Service implements Serializable {
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
 		private Long id;
 		private Long service;
-		
-		@JsonDeserialize(using = LocalDateDeserializer.class)
-	    @JsonSerialize(using = LocalDateSerializer.class)
+
 		private LocalDate date;
 		
 		private Long customerCount;

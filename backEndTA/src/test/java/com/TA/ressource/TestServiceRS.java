@@ -31,7 +31,7 @@ public class TestServiceRS {
 	}	
 	
 	@Test public void postNewService() {
-		String serviceJson = "{\"date\":\"2015-02-07\",\"service\":2,\"customerCount\":26}";
+		String serviceJson = "{\"date\":\"2015-02-17\",\"service\":2,\"customerCount\":26}";
 		
 		given().contentType("application/json").body(serviceJson).
 	    when().
