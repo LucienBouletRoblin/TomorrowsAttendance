@@ -18,6 +18,7 @@ import javax.ws.rs.core.UriInfo;
 
 import com.TA.model.Service;
 
+@Path("/rs/service")
 @Stateless
 public class ServiceRS {
 	
@@ -33,9 +34,9 @@ public class ServiceRS {
 	}
 	
 	@POST
-	@Path("/rs/service")
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response postService(Service service, @Context UriInfo uriInfo){
+		System.out.println(service.getDate());
 		this.entityManager.persist(service);
 		
 		URI location = uriInfo.getRequestUriBuilder()

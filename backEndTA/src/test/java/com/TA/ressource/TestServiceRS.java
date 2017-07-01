@@ -12,6 +12,8 @@ import com.google.common.net.MediaType;
 import io.restassured.RestAssured;
 
 public class TestServiceRS {
+	
+	private String serviceURI = "/rs/service";
 
 	@BeforeClass
 	public static void configConnection(){
@@ -22,19 +24,19 @@ public class TestServiceRS {
 	
 	@Test public void getAllServices() {
 	    when().
-        	get("/allservices").
+        	get(this.serviceURI + "/allservices").
         then().
 	        statusCode(200).
 	        body("service", hasItems(1));
 	}	
 	
 	@Test public void postNewService() {
-		String serviceJson = "{\"date\":\"1968-11-16T00:00:00\",\"service\":2,\"customerCount\":26}";
-		String serviceURI = "/rs/service";
+		String serviceJson = "{\"date\":\"2015-02-07\",\"service\":2,\"customerCount\":26}";
 		
 		given().contentType("application/json").body(serviceJson).
 	    when().
-        	post(serviceURI);
+        	post(this.serviceURI).then().
+	        statusCode(200);
 	}	
 
 }
