@@ -42,7 +42,7 @@ public class TestServiceRS extends EJBTest{
 	}	
 	
 	@Test public void postNewService() {
-		String serviceJson = "{\"date\":\"2075-02-17\",\"service\":2,\"customerCount\":26}";
+		String serviceJson = "{\"date\":\"2017-07-09T22:00:00.000Z\",\"service\":2,\"customerCount\":26}";
 		
 		given().contentType("application/json").body(serviceJson).
 	    when().

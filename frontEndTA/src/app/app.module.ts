@@ -11,6 +11,8 @@ import {RadioButtonModule} from 'primeng/primeng';
 import {SpinnerModule} from 'primeng/primeng';
 import {CalendarModule} from 'primeng/primeng';
 
+import { ServiceService} from './services/service.service'
+
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
@@ -28,7 +30,7 @@ import { AppRoutingModule } from './app-routing.module';
     AppComponent,
     DashboardComponent
   ],
-  providers: [  ],
+  providers: [ ServiceService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

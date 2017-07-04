@@ -7,6 +7,8 @@ import {SpinnerModule} from 'primeng/primeng';
 import {CalendarModule} from 'primeng/primeng';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { ServiceService } from '../services/service.service'
+
 
 import 'rxjs/add/operator/toPromise';
 
@@ -19,11 +21,17 @@ export class DashboardComponent implements OnInit {
 
   serviceEntry = new Service();
 
+   constructor(private http: Http,
+    private serviceService : ServiceService) { }
+
   ngOnInit() {
 
   }
 
   onSubmit(){
     alert('submit');
+
+    this.serviceService.createService(this.serviceEntry);
+
   }
 }
